@@ -1,7 +1,7 @@
-# Agentes de IA — Projeto do Curso (Aula 1)
+# Agentes de IA — Projeto do Curso (Aula 2)
 
-> **AGENTES DE IA: A revolução da IA** · Aula 1 — Fundamentos + Setup do Projeto
-> Agente ReAct mínimo com FastAPI, observabilidade no Langfuse, empacotado em Docker e pronto para deploy no Render.
+> **AGENTES DE IA: A revolução da IA** · Aula 2 — Múltiplas ferramentas + Orquestração explícita (LangGraph)
+> Agente com múltiplas ferramentas e orquestração explícita (StateGraph), exposto por FastAPI, observável no Langfuse, em Docker e publicado no Render.
 
 Este é o ponto de partida do projeto multiagente do curso. A cada aula adicionamos uma
 camada (memória, RAG com PostgreSQL + pgvector, mais ferramentas, orquestração
@@ -34,8 +34,9 @@ Infraestrutura, frameworks e RAG são open-source; o LLM começa na OpenAI e é 
 agentes-curso/
 ├── app/
 │   ├── __init__.py
-│   ├── agent.py        # definição do agente (LangGraph + LangChain)
-│   └── main.py         # API FastAPI que expõe o agente
+│   ├── agent.py        # ferramentas (calculator, knowledge_lookup) + modelo
+│   ├── graph.py        # orquestração explícita: StateGraph (nós, arestas, estado)
+│   └── main.py         # API FastAPI que expõe o grafo
 ├── .env.example        # modelo de segredos (versionar)
 ├── .gitignore
 ├── .dockerignore
