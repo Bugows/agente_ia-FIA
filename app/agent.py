@@ -24,7 +24,7 @@ def calculator(expression: str) -> str:
 # Placeholder em memória. Na Aula 3 isto vira RAG real com PostgreSQL + pgvector.
 KNOWLEDGE_BASE = {
     "horario de atendimento": "O atendimento funciona de segunda a sexta, das 9h às 18h.",
-    "politica de reembolso": "Reembolsos podem ser solicitados em até 30 dias após a compra.",
+    "política de reembolso": "Reembolsos podem ser solicitados em até 30 dias após a compra.",
     "prazo de entrega": "O prazo médio de entrega é de 5 a 7 dias úteis.",
 }
 
@@ -54,6 +54,6 @@ SYSTEM_PROMPT = (
 
 def build_model():
     """Cria o modelo já com as ferramentas vinculadas (tool calling)."""
-    model = ChatOpenAI(model=os.getenv("OPENAI_MODEL", "gpt-4o-mini"), temperature=0)
+    model = ChatOpenAI(model=os.getenv("OPENAI_MODEL", "gpt-5.4-mini-2026-03-17"), temperature=0)
     # bind_tools informa ao modelo quais ferramentas ele pode chamar.
     return model.bind_tools(TOOLS)
